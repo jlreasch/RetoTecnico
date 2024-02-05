@@ -40,7 +40,7 @@ module.exports.postNewActor = async(event)=>{
         "id": id_to_write,
         "name": body.name,
         "surname": body.surname,
-        "dni": body.dni
+        "DNI": body.dni
         }
     }; 
     
