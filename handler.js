@@ -31,8 +31,6 @@ module.exports.postNewActor = async(event)=>{
   
   const body = JSON.parse(event.body);
   let id_to_write = uuidv4();
-
-  console.log(body);
    
    const params = {
     TableName: "newActors",
@@ -46,7 +44,38 @@ module.exports.postNewActor = async(event)=>{
     
     let promise = dynamo.put(params).promise();
     let result = await promise;
-    console.log(result);
+
+    return {    
+      statusCode: 200,
+      body: JSON.stringify(
+        {
+          message: 'date saved', 
+          input: event,
+        },
+        null,
+        2
+      ),
+    };
+};
+
+module.exports.postNewActress = async(event)=>{
+  
+  const body = JSON.parse(event.body);
+  let id_to_write = uuidv4();
+   
+   const params = {
+    TableName: "newActors",
+    Item:{
+        "id": id_to_write,
+        "name": body.name,
+        "surname": body.surname,
+        "DNI": body.dni
+        }
+    }; 
+    
+    let promise = dynamo.put(params).promise();
+    let result = await promise;
+  
 
     return {    
       statusCode: 200,

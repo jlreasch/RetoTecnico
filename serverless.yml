@@ -64,6 +64,12 @@ functions:
       - http:
           method: POST
           path: /postNewActor
+  postNewActress:
+    handler: handler.postNewActress
+    events:
+      - http:
+          method: POST
+          path: /postNewActress
   getNewActor:
     handler: handler.getNewActor
     events:
