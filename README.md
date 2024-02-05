@@ -1,4 +1,4 @@
-# RetoTecnico11052023-1814
+# RetoTecnico
 Decidí crear 3 endpoints, 2 de tipo GET y 1 de tipo POST, los endpoints son:
 
 https://f1y9br75ua.execute-api.us-east-1.amazonaws.com/dev/getActor/{number}
